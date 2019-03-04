@@ -1,7 +1,7 @@
 /** 
 * @Author : Murali.s <muralismmr94@gmail.com>.
 * @Version :1.0.
-* @purpose : It is used to reusage of methods instead of writing code duplications.
+* @purpose : It is used to reusage of methods instead of writing code duplications we stored in util file.
 */
 
 /**
@@ -38,7 +38,7 @@ class LinkedList {
         }
         else {
             var temp = this.first;
-            while (temp.next) {
+            while (temp.next) { 
                 temp = temp.next;
             }
             this.size++;
@@ -49,7 +49,7 @@ class LinkedList {
 
      /**
      * @function: It is used to search  the element node in linked list.
-     * @param : The user input Data is taken as parameter.
+     * @param   : The user input Data is taken as parameter.
      */
     search(item) {
         if (this.first == null) {
@@ -88,7 +88,6 @@ class LinkedList {
             else {
                 prev.next = node
                 node.next = temp
-
                 break;
             }
         }
@@ -115,7 +114,6 @@ class LinkedList {
                 prev.next = temp.next;
                 this.size--;
                 return temp.data;
-
             }
 
             prev = temp;
@@ -163,7 +161,7 @@ class LinkedList {
       }
 
     /**
-     * @function: It is used to delete  the node at first position in linked list.
+     * @function: It is used to delete  the node position in linked list.
      */
       deleteFirst() {             
         if (this.head == null) {
@@ -250,17 +248,17 @@ class LinkedList1 {
      */
     constructor() {
       this.head = null;
-      this.size = null;
+      this.size = 0;
     }
 
      /**
      * @function: It is used to add the node in linked list.
-     * @param : The user input Data is taken as parameter.
+     * @param   : The user input Data is taken as parameter.
      */
     add(data) {
       try {
         var node = new Node(data);
-        var current = this.head;
+        var current;
         if (this.head == null) {
           this.head = node;
         } else {
@@ -271,7 +269,8 @@ class LinkedList1 {
           current.next = node;
         }
         this.size++;
-      } catch (error) {
+      } 
+      catch (error) {
         console.log(error.message);
       }
     }
@@ -289,7 +288,8 @@ class LinkedList1 {
           temp = temp.next;
         }
         return false;
-      } catch (error) {
+      } 
+      catch (error) {
         console.log(error.message);
       }
     }
