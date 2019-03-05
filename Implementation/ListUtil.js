@@ -2,12 +2,10 @@
 * @Author : Murali.s <muralismmr94@gmail.com>.
 * @Version :1.0.
 * @purpose : It is used to reusage of methods instead of writing code duplications we stored in util file.
-*/
-
-/**
-* @purpose : To create a node class with one argument constructor.
 * @function : It is used to initialization the data value into the node. 
 */
+
+//crating  a node class with an argument constructor.
 class Node {
     constructor(data) {
         this.data = data;

@@ -1,5 +1,6 @@
 /*****************************************************************************************
  * @Purpose     :   Stack implementation.
+ * @file        :   StackUtil.js
  * @overview    :   Stack implementation push pop peek and display function.
  * @author      :   Murali <muralismmr94@gmail.com>
  * @version     :   1.0
@@ -12,11 +13,19 @@ class Stack {
         this.top = -1;
     }
 
+    /**
+     * @function  : This function is used initialization the class. 
+     * @param     : capacity is used to create an n size stake. 
+     */
     stack(capacity) {
         this.capacity = capacity;
         var t = new items[capacity];
     }
 
+    /**
+     * @function  : This method is used  to insert the values into the stack
+     * @param     : The data is use to insert the value of the data.
+     */
     push(data) {
         if (this.top == this.capacity - 1) {
             console.log("Stack Overflow");
@@ -26,6 +35,9 @@ class Stack {
         this.items[++this.top] = data;
     }
 
+    /**
+     * @function  : This method is used  to delete the values into the stack 
+     */
     pop() 
     {
         if (this.top == -1)
@@ -34,6 +46,9 @@ class Stack {
         return this.items[this.top--];
     }
 
+    /**
+     * @function  : This method is used to pick the element in to the stack.
+     */
     peak() {
         if (this.top == -1)
             console.log("stack is empty");
@@ -41,12 +56,18 @@ class Stack {
             console.log(this.items[top]);
     }
 
+    /**
+     * @function  :This method is used to get the size of stack.
+     */
     getSize()
     {
         return this.size;
 
     }
 
+    /**
+     * @function  : this function is used to check the stack is empty or not.
+     */
     isEmpty() {
         if (size == 0)
             return true;
@@ -55,6 +76,9 @@ class Stack {
 
     }
 
+    /**
+     * @function  : It shows the items list in stack.
+     */
     display() {
         var st = "";
         for (let i = 0; i < this.size; i++) {
@@ -62,6 +86,10 @@ class Stack {
         }
     }
 
+    /**
+     * @function  : This method is returns the reverse order of the stack present list.
+     * @param     : The method is take an input array of items.
+     */
     reversStack(items) {
         var newstack = new Stack;
         var n = this.getSize();
@@ -74,18 +102,32 @@ class Stack {
     
 }
 //*************************************** Stacks ***********************************************
-// Stack operations using exception handling(try,catch).
+
+/**
+ * @function  : this method is used to create a node class .
+ */
 class SNode {
+  /**
+   * @function  : This constructor is used to create an initialization of snode function.
+   * @param {*} data 
+   */
     constructor(data) {
       this.data = data;
       this.next = null;
     }
   }
-  
+  /**
+   * @function  : This  class is used to create a Stack methods inside the class.
+   */
   class Stacks {
     constructor() {
       this.top = null;
     }
+
+    /**
+     * @function  : This method is used  to insert the values into the stack
+     * @param     : The data is use to insert the value of the data.
+     */
        push(item) {
       try {
         let node = new SNode(item);
@@ -100,6 +142,10 @@ class SNode {
       }
     }
 
+
+    /**
+     * @function  : This method is used  to delete the values into the stack 
+     */
     pop() {
       try {
         if (this.top) {
@@ -115,6 +161,9 @@ class SNode {
       }
     }
 
+    /**
+     * @function  : This method is used to pick the element in to the stack.
+     */
     peak() {
       try {
         if (this.top) {
@@ -126,11 +175,17 @@ class SNode {
         console.log(error.message);
       }
     }
-
+    
+    /**
+     * @function  : this function is used to check the stack is empty or not.
+     */
     isEmpty() {
       return this.length > 1;
     }
 
+    /**
+     * @function  : it returns the size of the stack.
+     */
     size() {
       let current = this.top;
       let counter = 0;
@@ -141,6 +196,9 @@ class SNode {
       return counter;
     }
 
+    /**
+     * @function  : It shows the items list in stack.
+     */
     print() {
       try {
         var string = "";
@@ -155,6 +213,9 @@ class SNode {
       }
     }
 
+    /**
+     * @function  : It is used to print the stack array.
+     */
     printShares(){
       var arr = [];
       if (this.top == null) {
@@ -169,6 +230,10 @@ class SNode {
       }
     }
 
+    /**
+     * @function  : It is used to remove of an Stack elements.
+     * @param {*} element 
+     */
     removeStock(element) {
       var temp = this.top;
       var prev = null;
@@ -189,4 +254,8 @@ class SNode {
       return -1;
     }
   }
+
+  /**
+   * @function :It is used to exports the methods.
+   */
 module.exports={Stack,Stacks}
